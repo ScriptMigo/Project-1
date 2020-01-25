@@ -31,13 +31,13 @@ Melissa Williamson
 
 *Task Breakdown:
 
-Scott Dowling: Data wrangling
+Scott Dowling: Data wrangling, Presentation, Analytical Code
 
-Saurin Patel: Research, insights
+Saurin Patel: Research, insights, Presentation, Analytical Code
 
-Sean Teeling: Research, PPT contributor
+Sean Teeling: Research, PPT contributor, Presentation, Analytical Code
 
-Melissa Williamson: PM, PPT organization
+Melissa Williamson: PM, PPT organization, Presentation, Analytical Code
 
 
 *Deliverable:
