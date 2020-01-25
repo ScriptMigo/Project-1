@@ -3,25 +3,20 @@ Code and Documentation for Project 1
 
 ![Paper Straws](/images/ps.jpg)
 
-Effect of turf type on player stats
+Questions to be answered:
 
-Scope: NFL stats by turf type, sample stats:
-		Number of injuries
-		Total yards per game
-		  Pass vs Run
-		Fumbles 
-		First Down Percentage
-		Attempts/Completions
-		
-	*Other possible considerations: 
-		Weather
-		Dome v Open	
-	
-*Goal (questions to be answered): Does turf type have an effect on player performance across sample metrics?
+variables:
+academic success = GPA, graduation rates, college acceptance rate
 
-Is turf type correlated with number of injuries?
-Is turf type correlated with number of fumbles?
-Is turf type correlated with completion metrics such as:first down percentage, or att/complete ratio?
+Does student:teacher ratio affect academic success in US public schools?
+Does average teacher salary affect academic success in US public schools?
+Do school financials (gov't allocated funds) affect academic success in US public schools?
+Does state of residence affect academic success in US public schools?
+
+Outputs:
+US trendlines of Academic Success (GPA and graduation rate)
+Compare aggregate metrics by state and determine best and worst performers
+Correlation of above metrics with academic success measures
 
 Stakeholders:
 Scott Dowling
@@ -30,8 +25,8 @@ Sean Teeling
 Melissa Williamson
 
 Resources:
-	NFL API
 	Kaggle API
+	US Department of Education
 
 *Task Breakdown:
 
