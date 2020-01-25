@@ -3,9 +3,9 @@ Code and Documentation for Project 1
 
 ![Paper Straws](/images/ps.jpg)
 
-*Effect of turf type on player stats
+Effect of turf type on player stats
 
-*Scope: NFL stats by turf type, sample stats:
+Scope: NFL stats by turf type, sample stats:
 		Number of injuries
 		Total yards per game
 		  Pass vs Run
@@ -19,13 +19,17 @@ Code and Documentation for Project 1
 	
 *Goal (questions to be answered): Does turf type have an effect on player performance across sample metrics?
 
-*Stakeholders:
+Is turf type correlated with number of injuries?
+Is turf type correlated with number of fumbles?
+Is turf type correlated with completion metrics such as:first down percentage, or att/complete ratio?
+
+Stakeholders:
 Scott Dowling
 Saurin Patel
 Sean Teeling
 Melissa Williamson
 
-*Resources:
+Resources:
 	NFL API
 	Kaggle API
 
