@@ -1,0 +1,29 @@
+
+
+sean:
+	grad rates v student teacher ratio by state  and us
+	grad rates v teacher salary by state  and us
+	grad rates v school financials by state  and us
+	
+	linregress for us
+
+saurin:
+	
+	math and reading by state
+	math and reading aggregate
+	
+
+scott:
+	stats analyses:
+	anova ga vs us or southeast
+	summary stats for metrics us, metrics ga
+	math and reading ga and region
+	
+melissa:
+	grad rates v student teacher ratio ga
+	grad rates v teacher salary by state ga
+	grad rates v school financials by state ga
+	
+
+
+	
