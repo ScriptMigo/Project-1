@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+data_files/2010RegionData.png
+image_files/2010RegionData.png
+image_files/2011RegionData.png
+image_files/2012RegionData.png
+image_files/2013RegionData.png
+image_files/2014RegionData.png
+image_files/2015RegionData.png
+image_files/2016RegionData.png
