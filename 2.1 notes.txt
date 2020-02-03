@@ -1,4 +1,7 @@
-
+a
+nova per region per year
+box plot
+then t test bt different regions if necessary/if show up on box plot
 
 
 to dos:
