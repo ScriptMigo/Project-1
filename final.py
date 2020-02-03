@@ -1,9 +1,9 @@
-# To add a new cell, type '# %%'
-# To add a new markdown cell, type '# %% [markdown]'
-# %%
-from IPython import get_ipython
+#!/usr/bin/env python
+# coding: utf-8
 
-# %%
+# In[ ]:
+
+
 # Import libraries
 import pandas as pd
 import numpy as np
@@ -14,14 +14,18 @@ import scipy.stats as stats
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# %%
+# In[ ]:
+
+
 # Revenue Data
 path = os.getcwd()
 dataFilePath = os.path.join(path,"data_files","revenue.xlsx")
 revenue = pd.read_excel(dataFilePath)
 
 
-# %%
+# In[ ]:
+
+
 # Salary Data
 path = os.getcwd()
 dataFilePath = os.path.join(path,"data_files","teacher_salaries_1.xlsx")
@@ -30,21 +34,27 @@ teacher_salaries.drop([0])
 teacher_salaries
 
 
-# %%
+# In[ ]:
+
+
 # Region Data
 path = os.getcwd()
 dataFilePath = os.path.join(path,"data_files","Region Defintions.xlsx")
 regionData = pd.read_excel(dataFilePath)
 
 
-# %%
+# In[ ]:
+
+
 # Graduation Rate Data
 path = os.getcwd()
 dataFilePath = os.path.join(path,"data_files","grad_rate.xlsx")
 grad_rate = pd.read_excel(dataFilePath)
 
 
-# %%
+# In[ ]:
+
+
 # Pupil Spending Data
 path = os.getcwd()
 dataFilePath = os.path.join(path,"data_files","per_pupil_spending.xlsx")
@@ -52,7 +62,9 @@ pupil_spending = pd.read_excel(dataFilePath)
 pupil_spending
 
 
-# %%
+# In[ ]:
+
+
 # Ratio Data
 path = os.getcwd()
 dataFilePath = os.path.join(path,"data_files","teacher_student_ratio.xlsx")
@@ -60,19 +72,25 @@ ratio = pd.read_excel(dataFilePath)
 ratio
 
 
-# %%
+# In[ ]:
+
+
 grad_rate_df = grad_rate.rename(columns={"Unmaned: 0":"States", "Unnamed: 1":"2010", "Unnamed: 2":"2011", "Unnamed: 3":"2012", "Unnamed: 4":"2013", "Unnamed: 5":"2014", "Unnamed: 6":"2015", "Unnamed: 7":"2016" })
 grad_rate_df.head()
 
 
-# %%
+# In[ ]:
+
+
 grad_rate_df_1 = grad_rate_df.drop([0,1])
 grad_rate_renamed = grad_rate_df_1.rename(columns={"Unnamed: 0": "States"})
 grad_rate_renamed = grad_rate_renamed.set_index('States')
 grad_rate_renamed.head()
 
 
-# %%
+# In[ ]:
+
+
 # Get full data for state
 yearValues = pd.DataFrame(grad_rate_renamed.loc['Oklahoma'].transform(lambda x: x.fillna(x.mean())))
 # Drop incomplete data
@@ -85,7 +103,9 @@ grad_rate_renamed = grad_rate_renamed.append(stateData).sort_index()
 grad_rate_renamed
 
 
-# %%
+# In[ ]:
+
+
 yearValues = grad_rate_renamed.loc['Idaho'].transform(lambda x: x.fillna(x.mean()))
 # Drop incomplete data
 grad_rate_renamed = grad_rate_renamed.drop(index='Idaho')
@@ -97,7 +117,9 @@ grad_rate_renamed = grad_rate_renamed.append(stateData).sort_index()
 grad_rate_renamed
 
 
-# %%
+# In[ ]:
+
+
 yearValues = grad_rate_renamed.loc['Kentucky'].transform(lambda x: x.fillna(x.mean()))
 # Drop incomplete data
 grad_rate_renamed = grad_rate_renamed.drop(index='Kentucky')
@@ -109,7 +131,9 @@ grad_rate_renamed = grad_rate_renamed.append(stateData).sort_index()
 grad_rate_renamed
 
 
-# %%
+# In[ ]:
+
+
 pupil_spending_renamed = pupil_spending.rename(columns={"2007":"2007_PPS", "2008":"2008_PPS", "2009":"2009_PPS",
                                                        "2010":"2010_PPS", "2011":"2011_PPS", "2012":"2012_PPS", "2013":"2013_PPS",
                                                        "2014":"2014_PPS", "2015":"2015_PPS", "2016":"2016_PPS", 
@@ -122,21 +146,29 @@ pupil_spending_renamed = pupil_spending.rename(columns={"2007":"2007_PPS", "2008
 pupil_spending_renamed.head()
 
 
-# %%
+# In[ ]:
+
+
 pupil_spending_df = pupil_spending_renamed.drop([0,1])
 pupil_spending_df.head()
 
 
-# %%
+# In[ ]:
+
+
 pupil_spending_df.isnull().sum()
 
 
-# %%
+# In[ ]:
+
+
 ratio_df = ratio.drop(['Unnamed: 1', 2007, 'Unnamed: 3', 'Unnamed: 4', 2008, 'Unnamed: 6', 'Unnamed: 7', 2009, 'Unnamed: 9','Unnamed: 10', 2010, 'Unnamed: 12'],axis=1)
 ratio_df.head()
 
 
-# %%
+# In[ ]:
+
+
 ratio_renamed_df = ratio_df.rename(columns={"Unnamed: 0":"State", "Unnamed: 13":"2011_staff", 2011:"2011_enrollment", 
                                      "Unnamed: 15":"2011_ratio", "Unnamed: 16":"2012_staff", 2012:"2012_enrollment", 
                                       "Unnamed: 18":"2012_ratio", "Unnamed: 19":"2013_staff", 2013:"2013_enrollment",
@@ -149,20 +181,28 @@ ratio_renamed_df.head()
                                      
 
 
-# %%
+# In[ ]:
+
+
 ratio_cleaned_df = ratio_renamed_df.drop([0])
 ratio_cleaned_df.head()
 
 
-# %%
+# In[ ]:
+
+
 ratio_cleaned_df.isnull().sum()
 
 
-# %%
+# In[ ]:
+
+
 grad_rate_renamed
 
 
-# %%
+# In[ ]:
+
+
 # Make GA dataset for comparing to US
 gaGradRate = pd.DataFrame(grad_rate_renamed.loc['Georgia'])
 # Remove GA for comparison
@@ -176,7 +216,9 @@ anovaResult.index = ['Statistic', 'P Value']
 anovaResult
 
 
-# %%
+# In[ ]:
+
+
 # Gather regions from region data file
 regionData = regionData.sort_values('Region')
 statesData = regionData[['State','Region']].sort_values(['Region','State'])
@@ -193,108 +235,64 @@ southGradRates = gradRatesByStateRegion[gradRatesByStateRegion['Region'] == 'Sou
 midWestGradRates
 
 
-# %%
-chartLabels = ['Northeast','South','Midwest','West']
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2010')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2010'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2010'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2010'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2010'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2010RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
+# In[ ]:
 
 
-# %%
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2011')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2011'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2011'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2011'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2011'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2011RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
+yearSet = ['2010','2011','2012','2013','2014','2015','2016']
+
+for year in yearSet:
+    # get the avg value for each region that year
+    ne = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'Northeast']
+    s  = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'South']
+    mw = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'Midwest']
+    w  = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'West']
 
 
-# %%
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2012')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2012'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2012'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2012'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2012'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2012RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
+# In[ ]:
 
 
-# %%
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2013')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2013'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2013'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2013'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2013'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2013RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
+# Produce boxplots for years 2010-2016
+yearSet = ['2010','2011','2012','2013','2014','2015','2016']
+
+for year in yearSet:
+    ne   = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'Northeast']
+    s    = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'South']
+    mw   = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'Midwest']
+    w    = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] == 'West']
+    USne = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] != 'Northeast']
+    USs  = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] != 'South']
+    USmw = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] != 'Midwest']
+    USw  = gradRatesByStateRegion[year][gradRatesByStateRegion['Region'] != 'West']
+    
+    neTtestResults = stats.ttest_ind(ne,USne)
+    sTtestResults = stats.ttest_ind(s,USs)
+    mwTtestResults = stats.ttest_ind(mw,USmw)
+    wTtestResults = stats.ttest_ind(w,USw)
+
+    chartLabels = ['Northeast','South','Midwest','West']
+
+    fig1, ax1 = plt.subplots()
+    ax1.set_title('Region Graduation Rates ' + year)
+    ax1.set_ylabel('Graduation %')
+    ax1.set_ylim(0, 100)
+    ax1.boxplot([
+        # Get values for each region for current year
+        ne,s,mw,w
+        ],labels=chartLabels,)
+    fileName = year + "RegionData.png"
+    # output image
+    dataFilePath = os.path.join(path,"image_files",fileName)
+    plt.savefig(dataFilePath)
+    # display plot
+    plt.show()
+    print(f"NE: {neTtestResults}")
+    print(f"S: {sTtestResults}")
+    print(f"MW: {mwTtestResults}")
+    print(f"W: {wTtestResults}")
 
 
-# %%
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2014')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2014'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2014'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2014'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2014'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2014RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
+# In[ ]:
 
 
-# %%
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2015')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2015'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2015'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2015'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2015'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2015RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
 
-
-# %%
-fig1, ax1 = plt.subplots()
-ax1.set_title('Region Graduation Rates 2016')
-ax1.set_ylabel('Graduation %')
-ax1.boxplot([
-    gradRatesByStateRegion['2016'][gradRatesByStateRegion['Region'] == 'Northeast'],
-    gradRatesByStateRegion['2016'][gradRatesByStateRegion['Region'] == 'South'],
-    gradRatesByStateRegion['2016'][gradRatesByStateRegion['Region'] == 'Midwest'],
-    gradRatesByStateRegion['2016'][gradRatesByStateRegion['Region'] == 'West'],
-    ],labels=chartLabels)
-dataFilePath = os.path.join(path,"image_files","2016RegionData.png")
-plt.savefig(dataFilePath)
-plt.show()
 
