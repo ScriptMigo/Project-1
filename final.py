@@ -359,8 +359,6 @@ pupil_spending_df.isnull().sum()
 
 
 # In[45]:
-
-
 ratio = pd.read_excel("data_files/teacher_student_ratio.xlsx")
 ratio.head()
 
@@ -369,8 +367,8 @@ ratio.head()
 # In[ ]:
 
 
-ratio_df = ratio.drop(['Unnamed: 1', 2007, 'Unnamed: 3', 'Unnamed: 4', 2008, 'Unnamed: 6', 'Unnamed: 7', 2009, 'Unnamed: 9','Unnamed: 10', 2010, 'Unnamed: 12'],axis=1)
-ratio_df.head()
+# ratio_df = ratio.drop(['Unnamed: 1', 2007, 'Unnamed: 3', 'Unnamed: 4', 2008, 'Unnamed: 6', 'Unnamed: 7', 2009, 'Unnamed: 9','Unnamed: 10', 2010, 'Unnamed: 12'],axis=1)
+# ratio_df.head()
 
 # In[ ]:
 ratio
@@ -378,17 +376,17 @@ ratio
 # In[47]:
 # In[ ]:
 
-
-ratio_renamed_df = ratio_df.rename(columns={"Unnamed: 0":"State", "Unnamed: 13":"2011_staff", 2011:"2011_enrollment", 
-                                     "Unnamed: 15":"2011_ratio", "Unnamed: 16":"2012_staff", 2012:"2012_enrollment", 
-                                      "Unnamed: 18":"2012_ratio", "Unnamed: 19":"2013_staff", 2013:"2013_enrollment",
-                                     "Unnamed: 21":"2013_ratio", "Unnamed: 22":"2014_staff", 2014:"2014_enrollment",
-                                     "Unnamed: 24":"2014_ratio",  "Unnamed: 25":"2015_staff", 2015:"2015_enrollment",
-                                     "Unnamed: 27":"2015_ratio", "Unnamed: 28":"2016_staff", 2016:"2016_enrollment",
-                                     "Unnamed: 30":"2016_ratio"}) 
+# Testing code, eliminating column renames ::SPD020420
+ratio_renamed_df = ratio
+# ratio_renamed_df = ratio_df.rename(columns={"Unnamed: 0":"State", "Unnamed: 13":"2011_staff", 2011:"2011_enrollment", 
+#                                      "Unnamed: 15":"2011_ratio", "Unnamed: 16":"2012_staff", 2012:"2012_enrollment", 
+#                                       "Unnamed: 18":"2012_ratio", "Unnamed: 19":"2013_staff", 2013:"2013_enrollment",
+#                                      "Unnamed: 21":"2013_ratio", "Unnamed: 22":"2014_staff", 2014:"2014_enrollment",
+#                                      "Unnamed: 24":"2014_ratio",  "Unnamed: 25":"2015_staff", 2015:"2015_enrollment",
+#                                      "Unnamed: 27":"2015_ratio", "Unnamed: 28":"2016_staff", 2016:"2016_enrollment",
+#                                      "Unnamed: 30":"2016_ratio"}) 
                                      
-ratio_renamed_df.head()                                 
-                                     
+# ratio_renamed_df.head()
 
 
 # In[48]:
@@ -597,7 +595,6 @@ revenue_df_2
 
 graduation_rate = [79.97, 81.06, 79.97, 82.99, 83.84, 84.58]
 revenue_df_2['Grad_Rate'] = graduation_rate
-
 
 # In[81]:
 
@@ -1190,17 +1187,23 @@ ga_grad_sorted_df_1
 # In[195]:
 
 
-ga_grad_df_2 = ga_grad_sorted_df_1.drop(['Average'])
-ga_grad_df_2
+# ga_grad_df_2 = ga_grad_sorted_df_1.drop(['Average'])
+# ga_grad_df_2
 
 
-# In[196]:
+# # In[196]:
 
+
+# ga_grad_df_2['Teacher Salary'] = teacher_salaries_ga_df_2['Georgia']
+# ga_grad_df_2
+
+# In[ ]:
+# More code to fix issue where values have been edited
+# already in testing
 
 ga_grad_df_2['Teacher Salary'] = teacher_salaries_ga_df_2['Georgia']
+
 ga_grad_df_2
-
-
 # In[197]:
 
 
@@ -1209,7 +1212,7 @@ ax = ga_grad_df_2['Teacher Salary'].plot(kind='line', marker='^', linestyle='-',
 plt.ylabel('Teachers Salary in Dollars')
 plt.xlabel('Years')
 ax2 = ax.twinx()
-ax2.plot(ga_grad_df_2['GEORGIA'].values, linestyle='-', marker='o', linewidth=2.0, color='red')
+ax2.plot(ga_grad_df_2['Georgia'].values, linestyle='-', marker='o', linewidth=2.0, color='red')
 plt.ylabel('Average Graduation rate')
 plt.title('Average Graduation Rate Compared to Teachers Salaries in Georgia')
 plt.grid()
@@ -1226,7 +1229,9 @@ ratio_cleaned_df.head()
 # In[199]:
 
 
-ratio_new = ratio_cleaned_df[['State', '2011_ratio', '2012_ratio', '2013_ratio', '2014_ratio', '2015_ratio', '2016_ratio']]
+# ratio_new = ratio_cleaned_df[['State', '2011_ratio', '2012_ratio', '2013_ratio', '2014_ratio', '2015_ratio', '2016_ratio']]
+# ratio_new.head()
+ratio_new = ratio_cleaned_df[['State', 'Ratio', 'Ratio.1', 'Ratio.2', 'Ratio.3', 'Ratio.4', 'Ratio.5']]
 ratio_new.head()
 
 
