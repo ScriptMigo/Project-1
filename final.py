@@ -1,20 +1,16 @@
-<<<<<<< HEAD
 #!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
-=======
 # To add a new cell, type '# %%'
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
->>>>>>> origin/melissas-code
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import linregress
 
-<<<<<<< HEAD
 # In[3]:
 
 
@@ -37,7 +33,6 @@ revenue_df.isnull().sum()
 # In[6]:
 
 
-=======
 
 # %%
 file = "data_files/revenue.xlsx"
@@ -53,12 +48,10 @@ revenue.isnull().sum()
 
 
 # %%
->>>>>>> origin/melissas-code
 grad_rate = pd.read_excel("data_files/grad_rate.xlsx")
 grad_rate.head()
 
 
-<<<<<<< HEAD
 # In[7]:
 
 
@@ -142,7 +135,6 @@ plt.savefig('Aggregated US Gradulation Rate')
 # In[27]:
 
 
-=======
 # %%
 grad_rate_df = grad_rate.rename(columns={"Unmaned: 0":"States", "Unnamed: 1":"2010", "Unnamed: 2":"2011", "Unnamed: 3":"2012", "Unnamed: 4":"2013", "Unnamed: 5":"2014", "Unnamed: 6":"2015", "Unnamed: 7":"2016" })
 grad_rate_df.head()
@@ -187,24 +179,19 @@ plt.legend(loc='best')
 
 
 # %%
->>>>>>> origin/melissas-code
 teacher_salaries = pd.read_excel("data_files/teacher_salaries_1.xlsx").round(0)
 teacher_salaries_new = teacher_salaries.drop([0])
 teacher_salaries_new.head()
 
 
-<<<<<<< HEAD
 # In[28]:
 
 
-=======
 # %%
->>>>>>> origin/melissas-code
 teacher_salaries_new_1 = teacher_salaries_new.drop(columns=['2007','2008','2009', '2017', '2018'], axis=1)
 teacher_salaries_new_1.head()
 
 
-<<<<<<< HEAD
 # In[31]:
 
 
@@ -221,7 +208,6 @@ grad_salary_renamed = grad_salary_df.rename(columns={2011 : '2011_grad_rate',
                                                  2016 : '2016_grad_rate', '2010':'2010_salary','2011':'2011_salary',
                                                  '2012':'2012_salary', '2013':'2013_salary', '2014':'2014_salary',
                                                  '2015':'2015_salary', '2016':'2016_salary'}) 
-=======
 # %%
 grad_salary_df = pd.merge(grad_rate_renamed, teacher_salaries_new_1, on='State', how='outer')
 grad_salary_df.head()
@@ -234,12 +220,10 @@ grad_salary_renamed = grad_salary_df.rename(columns={'2010_x' : '2010_grad_rate'
                                                  '2016_x' : '2016_grad_rate', '2010_y':'2010_salary','2011_y':'2011_salary',
                                                  '2012_y':'2012_salary', '2013_y':'2013_salary', '2014_y':'2014_salary',
                                                  '2015_y':'2015_salary', '2016_y':'2016_salary'}) 
->>>>>>> origin/melissas-code
 
 grad_salary_renamed.head()
 
 
-<<<<<<< HEAD
 # In[33]:
 
 
@@ -250,14 +234,12 @@ grad_salary_renamed.iloc[2,6]= 80
 
 
 grad_salary_df = grad_salary_renamed[['State', '2011_grad_rate', '2011_salary', 
-=======
 # %%
 grad_salary_renamed.iloc[2,6]= 80
 
 
 # %%
 grad_salary_df = grad_salary_renamed[['State', '2010_grad_rate', '2010_salary', '2011_grad_rate', '2011_salary', 
->>>>>>> origin/melissas-code
                                      '2012_grad_rate', '2012_salary', '2013_grad_rate', '2013_salary',
                                      '2014_grad_rate', '2014_salary', '2015_grad_rate', '2015_salary',
                                      '2016_grad_rate', '2016_salary']]
@@ -265,7 +247,6 @@ grad_salary_df = grad_salary_renamed[['State', '2010_grad_rate', '2010_salary', 
 grad_salary_df.head()
 
 
-<<<<<<< HEAD
 # In[40]:
 
 
@@ -275,7 +256,6 @@ grad_salary_df.head()
 # In[41]:
 
 
-=======
 # %%
 grad_salary_df.head()
 
@@ -285,12 +265,10 @@ grad_salary_df.head()
 
 
 # %%
->>>>>>> origin/melissas-code
 pupil_spending = pd.read_excel("data_files/per_pupil_spending.xlsx")
 pupil_spending.head()
 
 
-<<<<<<< HEAD
 # In[42]:
 # In[ ]:
 
@@ -1401,7 +1379,6 @@ ga_rev_df_1
 # In[207]:
 
 
-=======
 # %%
 pupil_spending_renamed = pupil_spending.rename(columns={"2007":"2007_PPS", "2008":"2008_PPS", "2009":"2009_PPS",
                                                        "2010":"2010_PPS", "2011":"2011_PPS", "2012":"2012_PPS", "2013":"2013_PPS",
@@ -1953,35 +1930,27 @@ ga_rev_df_1
 
 
 # %%
->>>>>>> origin/melissas-code
 ga_grad_sorted_df_1['Spending'] = teacher_salaries_ga_df_2['Georgia']
 ga_grad_df_5 = ga_grad_sorted_df_1.drop(['Spending'],axis=1)
 ga_grad_df_5
 
 
-<<<<<<< HEAD
 # In[208]:
 
 
-=======
 # %%
->>>>>>> origin/melissas-code
 ga_rev_df_1['Grad Rate'] = [67, 70, 71.7, 70, 78.8, 79, 81]
 ga_rev_df_1
 
 
-<<<<<<< HEAD
 # In[209]:
 
 
-=======
 # %%
->>>>>>> origin/melissas-code
 ga_rev_df_2 = ga_rev_df_1.drop(['STATE', 'TOTAL_EXPENDITURE'], axis=1)
 ga_rev_df_2
 
 
-<<<<<<< HEAD
 # In[210]:
 
 
@@ -2000,7 +1969,6 @@ plt.show()
 # In[211]:
 
 
-=======
 # %%
 fig = plt.figure()
 ax = ga_rev_df_2['TOTAL_REVENUE'].plot(kind='line', marker='^', linestyle='-', color='b', label='Total Revenue')
@@ -2018,12 +1986,10 @@ ratio_cleaned_df.head()
 
 
 # %%
->>>>>>> origin/melissas-code
 ga_rev_df_3 = ga_rev_df_1.drop(['STATE', 'TOTAL_REVENUE'], axis=1)
 ga_rev_df_3
 
 
-<<<<<<< HEAD
 # In[212]:
 
 
@@ -2048,7 +2014,6 @@ ga_student_spending_df
 # In[214]:
 
 
-=======
 # %%
 fig = plt.figure()
 ax = ga_rev_df_3['TOTAL_EXPENDITURE'].plot(kind='line', marker='^', linestyle='-', color='b', label='Total Expenditure')
@@ -2061,12 +2026,10 @@ ga_student_spending_df
 
 
 # %%
->>>>>>> origin/melissas-code
 ga_student_spending_df['Grad Rate'] = [67,70,71.7, 70, 78.8, 79,81]
 ga_student_spending_df
 
 
-<<<<<<< HEAD
 # In[215]:
 
 
@@ -2649,7 +2612,6 @@ plt.show()
 # In[ ]:
 
 
-=======
 # %%
 fig = plt.figure()
 ax = ga_student_spending_df['Georgia Per Student Spending'].plot(kind='line', marker='^', linestyle='-', color='b', label='Total Expenditure')
@@ -2704,6 +2666,5 @@ df1 = (df.set_index(["location", "name"])
 
 
 # %%
->>>>>>> origin/melissas-code
 
 
