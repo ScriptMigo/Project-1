@@ -1,0 +1,14 @@
+
+keeping:
+
+aggregated us grad rate
+aggregated us school financial revenue
+aggregated us school financial expend*
+deficit *maybe appendix
+revenue/expend *maybe appendix
+per student spending by state   - remove
+per student spending US
+grad rate US
+grad rate GA
+pie chart revenue breakout *maybe appendix
+student teacher ratio by year us
